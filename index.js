@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const mongoose = require("moongoose");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
 
 const courses = require("./routes/courses");
 app.use("/api/courses", courses);
